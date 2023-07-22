@@ -59,7 +59,8 @@ local plugins = {
     cmd = "Copilot",
     -- opts = overrides.copilot,
     config = function()
-      require("copilot").setup(overrides.copilot)
+      -- require("copilot").setup(overrides.copilot)
+      require "custom.configs.copilot"
     end,
   },
 
