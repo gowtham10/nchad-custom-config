@@ -62,8 +62,29 @@ M.nvimtree = {
 
 M.telescope = {
   defaults = {
-    file_ignore_patterns = { "node_modules", "vendor/", "dist/", "build/", "target/", "out/", ".next/", "next/" , ".git/"},
-  }
+    file_ignore_patterns = {
+      "node_modules",
+      "vendor/",
+      "dist/",
+      "build/",
+      "target/",
+      "out/",
+      ".next/",
+      "next/",
+      ".git/",
+    },
+  },
+}
+
+M.cmp = {
+  sources = {
+    { name = "copilot" },
+    { name = "nvim_lsp" },
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "nvim_lua" },
+    { name = "path" },
+  },
 }
 
 return M

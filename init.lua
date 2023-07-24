@@ -9,5 +9,4 @@
 local opt = vim.opt
 
 -------------------------------------- options ------------------------------------------
-opt.foldenable = true
-opt.foldmethod = "indent"
+opt.foldmethod = "syntax"

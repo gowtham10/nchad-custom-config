@@ -43,6 +43,11 @@ local plugins = {
     opts = overrides.nvimtree,
   },
 
+  {
+    "hrsh7th/nvim-cmp",
+    opts = overrides.cmp,
+  },
+
   -- Install a plugin
   {
     "max397574/better-escape.nvim",
@@ -59,6 +64,15 @@ local plugins = {
     cmd = "Copilot",
     config = function()
       require "custom.configs.copilot"
+    end,
+  },
+
+  {
+    "zbirenbaum/copilot-cmp",
+    event = "InsertEnter",
+    cmd = "Copilot",
+    config = function()
+      require("copilot_cmp").setup()
     end,
   },
 
@@ -80,7 +94,7 @@ local plugins = {
   --     },
   --   },
   -- },
-  
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",

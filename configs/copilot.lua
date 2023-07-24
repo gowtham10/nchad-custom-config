@@ -11,7 +11,7 @@ copilot.setup {
     enabled = false,
   },
   suggestion = {
-    enabled = true,
+    enabled = false,
     auto_trigger = true,
     debounce = 50,
     keymap = {
