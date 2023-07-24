@@ -69,7 +69,7 @@ local plugins = {
 
   {
     "zbirenbaum/copilot-cmp",
-    event = "InsertEnter",
+    event = {"InsertEnter", "LspAttach"},
     cmd = "Copilot",
     config = function()
       require("copilot_cmp").setup()
