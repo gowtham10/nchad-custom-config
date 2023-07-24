@@ -5,3 +5,9 @@
 --   pattern = "*",
 --   command = "tabdo wincmd =",
 -- })
+
+local opt = vim.opt
+
+-------------------------------------- options ------------------------------------------
+opt.foldenable = true
+opt.foldmethod = "indent"

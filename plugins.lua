@@ -57,24 +57,30 @@ local plugins = {
     "zbirenbaum/copilot.lua",
     event = "InsertEnter",
     cmd = "Copilot",
-    -- opts = overrides.copilot,
     config = function()
-      -- require("copilot").setup(overrides.copilot)
       require "custom.configs.copilot"
     end,
   },
 
-  {
-    "rcarriga/nvim-dap-ui",
-    dependencies = {
-      {
-        "mfussenegger/nvim-dap",
-        -- config = function()
-        --   require "custom.configs.dap"
-        -- end,
-      },
-    },
-  }
+  -- {
+  --   "mfussenegger/nvim-dap",
+  --   config = function()
+  --     require "custom.configs.dap"
+  --   end,
+  -- },
+
+  -- {
+  --   "rcarriga/nvim-dap-ui",
+  --   dependencies = {
+  --     {
+  --       "mfussenegger/nvim-dap",
+  --       -- config = function()
+  --       --   require "custom.configs.dap"
+  --       -- end,
+  --     },
+  --   },
+  -- },
+  
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",

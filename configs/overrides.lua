@@ -62,7 +62,7 @@ M.nvimtree = {
 
 M.telescope = {
   defaults = {
-    file_ignore_patterns = { "node_modules", "vendor/", "dist/", "build", "target/", "out/", ".next/", "next/" , ".git/"},
+    file_ignore_patterns = { "node_modules", "vendor/", "dist/", "build/", "target/", "out/", ".next/", "next/" , ".git/"},
   }
 }
 
