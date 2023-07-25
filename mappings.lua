@@ -15,37 +15,37 @@ M.gitsigns = {
       end,
       "Toggle current line blame",
     },
-    ["<leader>hs"] = {
+    ["<leader>ghs"] = {
       function()
         require("gitsigns").stage_hunk()
       end,
       "Stage hunk",
     },
-    ["<leader>hu"] = {
+    ["<leader>ghu"] = {
       function()
         require("gitsigns").undo_stage_hunk()
       end,
       "Undo stage hunk",
     },
-    ["<leader>hd"] = {
+    ["<leader>ghd"] = {
       function()
         require("gitsigns").diffthis()
       end,
       "Diff this",
     },
-    ["<leader>hp"] = {
+    ["<leader>ghp"] = {
       function()
         require("gitsigns").preview_hunk_inline()
       end,
       "Preview hunk inline",
     },
-    ["<leader>hS"] = {
+    ["<leader>ghS"] = {
       function()
         require("gitsigns").stage_buffer()
       end,
       "Stage buffer",
     },
-    ["<leader>hR"] = {
+    ["<leader>ghR"] = {
       function()
         require("gitsigns").reset_buffer()
       end,
@@ -53,7 +53,7 @@ M.gitsigns = {
     },
   },
   v = {
-    ["<leader>hs"] = {
+    ["<leader>ghs"] = {
       function()
         require("gitsigns").stage_hunk { vim.fn.line ".", vim.fn.line "v" }
       end,
