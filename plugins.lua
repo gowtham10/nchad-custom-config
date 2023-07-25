@@ -69,11 +69,25 @@ local plugins = {
 
   {
     "zbirenbaum/copilot-cmp",
-    event = {"InsertEnter", "LspAttach"},
+    event = { "InsertEnter", "LspAttach" },
     cmd = "Copilot",
     config = function()
       require("copilot_cmp").setup()
     end,
+  },
+
+  {
+    "folke/todo-comments.nvim",
+    cmd = { "TodoTrouble", "TodoTelescope", "TodoQuickFix", "TodoLocList" },
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
+  },
+
+  {
+    "folke/trouble.nvim",
+    cmd = { "Trouble", "TroubleToggle", "TroubleRefresh", "TroubleClose" },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {},
   },
 
   -- {

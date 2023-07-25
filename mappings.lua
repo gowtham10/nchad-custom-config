@@ -68,6 +68,48 @@ M.gitsigns = {
   },
 }
 
+M.telescope = {
+  n = {
+    ["<leader>gc"] = { "<cmd> Telescope git_branches <CR>", "Git branches" },
+    ["<leader>gh"] = { "<cmd> Telescope git_stash <CR>", "Git stash list" },
+    ["<leader>fs"] = { "<cmd> Telescope lsp_document_symbols <CR>", "Symbol search" },
+    ["<leader>fg"] = { "<cmd> Telescope grep_string <CR>", "String search" },
+  },
+}
+
+M.todo = {
+  n = {
+    ["<leader>te"] = { "<cmd> TodoTelescope <CR>", "Todo Telescope" },
+    ["<leader>tt"] = { "<cmd> TodoTrouble <CR>", "Todo Trouble" },
+    ["<leader>tq"] = { "<cmd> TodoQuickFix <CR>", "Todo QuickFix" },
+    ["<leader>tl"] = { "<cmd> TodoLocList <CR>", "Todo LocList" },
+    ["]t"] = {
+      function()
+        require("todo-comments").jump_next()
+      end,
+      "Next todo",
+    },
+    ["[t"] = {
+      function()
+        require("todo-comments").jump_prev()
+      end,
+      "Previous todo",
+    },
+  },
+}
+
+M.trouble = {
+  n = {
+    ["<leader>tx"] = { "<cmd> TroubleToggle <CR>", "Toggle trouble" },
+    ["<leader>tr"] = { "<cmd> TroubleRefresh <CR>", "Trouble refresh" },
+    ["<leader>tc"] = { "<cmd> TroubleClose <CR>", "Trouble close" },
+    ["<leader>tk"] = { "<cmd> TroubleToggle quickfix <CR>", "Trouble quickfix" },
+    ["<leader>ts"] = { "<cmd> TroubleToggle loclist <CR>", "Trouble loclist" },
+    ["<leader>tw"] = { "<cmd> TroubleToggle workspace_diagnostics <CR>", "Trouble lsp workspace diagnostics" },
+    ["<leader>tg"] = { "<cmd> TroubleToggle document_diagnostics <CR>", "Trouble lsp document diagnostics" },
+  },
+}
+
 -- M.copilot = {
 --   i = {
 --     ["<C-y>"] = {"<C-y>", "Accept suggetion", opts = { nowait = true } },
