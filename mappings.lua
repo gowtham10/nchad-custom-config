@@ -74,6 +74,7 @@ M.telescope = {
     ["<leader>gh"] = { "<cmd> Telescope git_stash <CR>", "Git stash list" },
     ["<leader>fs"] = { "<cmd> Telescope lsp_document_symbols <CR>", "Symbol search" },
     ["<leader>fg"] = { "<cmd> Telescope grep_string <CR>", "String search" },
+    ["<leader>fh"] = { "<cmd> Telescope search_history <CR>", "Search history"},
   },
 }
 
