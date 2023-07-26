@@ -74,6 +74,7 @@ M.telescope = {
       ".git/",
     },
   },
+  extensions_list = { "themes", "terms", "ui-select"},
 }
 
 M.cmp = {

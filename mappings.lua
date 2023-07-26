@@ -9,7 +9,7 @@ M.general = {
 
 M.gitsigns = {
   n = {
-    ["<leader>tb"] = {
+    ["<leader>gtb"] = {
       function()
         require("gitsigns").toggle_current_line_blame()
       end,
@@ -70,11 +70,11 @@ M.gitsigns = {
 
 M.telescope = {
   n = {
-    ["<leader>gc"] = { "<cmd> Telescope git_branches <CR>", "Git branches" },
-    ["<leader>gh"] = { "<cmd> Telescope git_stash <CR>", "Git stash list" },
+    ["<leader>gco"] = { "<cmd> Telescope git_branches <CR>", "Git branches" },
+    ["<leader>gsl"] = { "<cmd> Telescope git_stash <CR>", "Git stash list" },
     ["<leader>fs"] = { "<cmd> Telescope lsp_document_symbols <CR>", "Symbol search" },
     ["<leader>fg"] = { "<cmd> Telescope grep_string <CR>", "String search" },
-    ["<leader>fh"] = { "<cmd> Telescope search_history <CR>", "Search history"},
+    ["<leader>fh"] = { "<cmd> Telescope search_history <CR>", "Search history" },
   },
 }
 
@@ -108,6 +108,41 @@ M.trouble = {
     ["<leader>ts"] = { "<cmd> TroubleToggle loclist <CR>", "Trouble loclist" },
     ["<leader>tw"] = { "<cmd> TroubleToggle workspace_diagnostics <CR>", "Trouble lsp workspace diagnostics" },
     ["<leader>tg"] = { "<cmd> TroubleToggle document_diagnostics <CR>", "Trouble lsp document diagnostics" },
+  },
+}
+
+M.session = {
+  n = {
+    ["<leader>ss"] = {
+      function()
+        require("session_manager").save_current_session()
+      end,
+      "Save session",
+    },
+    ["<leader>slo"] = {
+      function()
+        require("session_manager").load_session()
+      end,
+      "Load session",
+    },
+    ["<leader>slc"] = {
+      function()
+        require("session_manager").load_current_dir_session()
+      end,
+      "Load current directory session",
+    },
+    ["<leader>sd"] = {
+      function()
+        require("session_manager").delete_session()
+      end,
+      "Delete session",
+    },
+    ["<leader>slt"] = {
+      function()
+        require("session_manager").load_last_session()
+      end,
+      "Load last session",
+    },
   },
 }
 

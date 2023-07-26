@@ -90,6 +90,33 @@ local plugins = {
     opts = {},
   },
 
+  { "nvim-telescope/telescope-ui-select.nvim", cmd = { "Telescope" } },
+
+  {
+    "Shatur/neovim-session-manager",
+    cmd = {
+      "SessionManager",
+    },
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
+
+  -- {
+  --   "jedrzejboczar/possession.nvim",
+  --   cmd = {
+  --     "PossessionClose",
+  --     "PossessionList",
+  --     "PossessionLoad",
+  --     "PossessionSave",
+  --     "PossessionDelete",
+  --     "PossessionRename",
+  --     "PossessionShow",
+  --   },
+  --   dependencies = { "nvim-lua/plenary.nvim" },
+  --   config = function()
+  --     require "custom.configs.possession"
+  --   end,
+  -- },
+
   -- {
   --   "mfussenegger/nvim-dap",
   --   config = function()
