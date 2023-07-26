@@ -34,8 +34,20 @@ local plugins = {
   },
 
   {
+    "folke/trouble.nvim",
+    -- lazy = false,
+    cmd = { "Trouble", "TroubleToggle", "TroubleRefresh", "TroubleClose" },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require "custom.configs.trouble"
+    end,
+    opts = {},
+  },
+
+  {
     "nvim-telescope/telescope.nvim",
-    opts = overrides.telescope,
+    -- opts = vim.tbl_deep_extend("force", overrides.telescope, M.trouble.telescope),
+    opts = overrides.telescope
   },
 
   {
@@ -83,14 +95,8 @@ local plugins = {
     opts = {},
   },
 
-  {
-    "folke/trouble.nvim",
-    cmd = { "Trouble", "TroubleToggle", "TroubleRefresh", "TroubleClose" },
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {},
-  },
-
-  { "nvim-telescope/telescope-ui-select.nvim", cmd = { "Telescope" } },
+  -- { "nvim-telescope/telescope-ui-select.nvim", cmd = { "Telescope" } },
+  { "nvim-telescope/telescope-ui-select.nvim" },
 
   {
     "Shatur/neovim-session-manager",

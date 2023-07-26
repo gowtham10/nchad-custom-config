@@ -107,7 +107,22 @@ M.trouble = {
     ["<leader>tk"] = { "<cmd> TroubleToggle quickfix <CR>", "Trouble quickfix" },
     ["<leader>ts"] = { "<cmd> TroubleToggle loclist <CR>", "Trouble loclist" },
     ["<leader>tw"] = { "<cmd> TroubleToggle workspace_diagnostics <CR>", "Trouble lsp workspace diagnostics" },
-    ["<leader>tg"] = { "<cmd> TroubleToggle document_diagnostics <CR>", "Trouble lsp document diagnostics" },
+    -- ["<leader>tg"] = { "<cmd> TroubleToggle document_diagnostics <CR>", "Trouble lsp document diagnostics" },
+    -- ["gR"] = { "<cmd> TroubleToggle lsp_references <CR>", "Trouble lsp references" },
+  },
+}
+
+M.lspconfig = {
+  n = {
+    ["gr"] = { "<cmd> TroubleToggle lsp_references <CR>", "Trouble lsp references" },
+    ["<leader>q"] = {
+      -- function()
+        -- vim.diagnostic.setloclist()
+      -- end,
+      "<cmd> TroubleToggle document_diagnostics <CR>",
+      "Trouble lsp doument diagnostic",
+    },
+
   },
 }
 
@@ -146,14 +161,20 @@ M.session = {
   },
 }
 
--- M.copilot = {
---   i = {
---     ["<C-y>"] = {"<C-y>", "Accept suggetion", opts = { nowait = true } },
---     ["<A-[>"] = {"<M-[>", "Previous suggestion", opts = { nowait = true } },
---     ["<A-]>"] = {"<M-]>", "Next suggestion", opts = { nowait = true } },
---     ["<C-x>"] = {"<C-[>", "Dismiss suggestion", opts = { nowait = true } },
---   }
--- }
+M.copilot = {
+  i = {
+    ["<C-u>"] = {
+      "<cmd> Copilot attach <CR>",
+      "Attach copilot",
+    },
+  },
+  --   i = {
+  --     ["<C-y>"] = {"<C-y>", "Accept suggetion", opts = { nowait = true } },
+  --     ["<A-[>"] = {"<M-[>", "Previous suggestion", opts = { nowait = true } },
+  --     ["<A-]>"] = {"<M-]>", "Next suggestion", opts = { nowait = true } },
+  --     ["<C-x>"] = {"<C-[>", "Dismiss suggestion", opts = { nowait = true } },
+  --   }
+}
 
 -- more keybinds!
 

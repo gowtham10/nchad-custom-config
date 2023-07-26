@@ -73,8 +73,23 @@ M.telescope = {
       "next/",
       ".git/",
     },
+    mappings = {
+      n = {
+        ["q"] = require("telescope.actions").close,
+        ["<C-f>"] = function()
+          -- require("telescope.actions").smart_send_to_qflist()
+          require("trouble.providers.telescope").open_with_trouble(vim.api.nvim_get_current_buf())
+        end,
+      },
+      i = {
+        ["<C-f>"] = function()
+          -- require("telescope.actions").smart_send_to_qflist()
+          require("trouble.providers.telescope").open_with_trouble(vim.api.nvim_get_current_buf())
+        end,
+      },
+    },
   },
-  extensions_list = { "themes", "terms", "ui-select"},
+  extensions_list = { "themes", "terms", "ui-select" },
 }
 
 M.cmp = {
