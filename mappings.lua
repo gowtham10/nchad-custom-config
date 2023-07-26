@@ -75,6 +75,7 @@ M.telescope = {
     ["<leader>fs"] = { "<cmd> Telescope lsp_document_symbols <CR>", "Symbol search" },
     ["<leader>fg"] = { "<cmd> Telescope grep_string <CR>", "String search" },
     ["<leader>fh"] = { "<cmd> Telescope search_history <CR>", "Search history" },
+    ["<leader>fp"] = { "<cmd> Telescope project <CR>", "Search project" },
   },
 }
 

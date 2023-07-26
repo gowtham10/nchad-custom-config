@@ -89,7 +89,7 @@ M.telescope = {
       },
     },
   },
-  extensions_list = { "themes", "terms", "ui-select" },
+  extensions_list = { "themes", "terms", "ui-select", "project" },
 }
 
 M.cmp = {
