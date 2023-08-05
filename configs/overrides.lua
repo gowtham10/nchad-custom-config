@@ -76,13 +76,13 @@ M.telescope = {
     mappings = {
       n = {
         ["q"] = require("telescope.actions").close,
-        ["<C-f>"] = function()
+        ["<C-j>"] = function()
           -- require("telescope.actions").smart_send_to_qflist()
           require("trouble.providers.telescope").open_with_trouble(vim.api.nvim_get_current_buf())
         end,
       },
       i = {
-        ["<C-f>"] = function()
+        ["<C-j>"] = function()
           -- require("telescope.actions").smart_send_to_qflist()
           require("trouble.providers.telescope").open_with_trouble(vim.api.nvim_get_current_buf())
         end,

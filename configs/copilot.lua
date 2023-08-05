@@ -12,16 +12,16 @@ copilot.setup {
   },
   suggestion = {
     enabled = false,
-    auto_trigger = true,
-    debounce = 50,
-    keymap = {
-      accept = "<C-y>",
-      accept_word = false,
-      accept_line = false,
-      next = "<M-]>",
-      prev = "<M-[>",
-      dismiss = "<C-[>",
-    },
+    -- auto_trigger = true,
+    -- debounce = 50,
+    -- keymap = {
+    --   accept = "<C-y>",
+    --   accept_word = false,
+    --   accept_line = false,
+    --   next = "<M-]>",
+    --   prev = "<M-[>",
+    --   dismiss = "<C-[>",
+    -- },
   },
   filetypes = {
     yaml = false,

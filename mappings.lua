@@ -4,6 +4,16 @@ local M = {}
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
+    ["<A-j>"] = { "<cmd> m+ <CR> ==", "Move line down" },
+    ["<A-k>"] = { "<cmd> m-2 <CR> ==", "Move line up" },
+  },
+  i = {
+    ["<A-j>"] = { "<Esc><cmd> m+ <CR>==gi", "Move line down" },
+    ["<A-k>"] = { "<Esc><cmd> m-2 <CR>==gi", "Move line up" },
+  },
+  v = {
+    ["<A-j>"] = { ":m'>+<CR>gv=gv", "Move line down" },
+    ["<A-k>"] = { ":m-2<CR>gv=gv", "Move line up" },
   },
 }
 
@@ -118,12 +128,11 @@ M.lspconfig = {
     ["gr"] = { "<cmd> TroubleToggle lsp_references <CR>", "Trouble lsp references" },
     ["<leader>q"] = {
       -- function()
-        -- vim.diagnostic.setloclist()
+      -- vim.diagnostic.setloclist()
       -- end,
       "<cmd> TroubleToggle document_diagnostics <CR>",
       "Trouble lsp doument diagnostic",
     },
-
   },
 }
 
@@ -177,6 +186,75 @@ M.copilot = {
   --   }
 }
 
+M.dap = {
+  n = {
+    ["<F5>"] = {
+      function()
+        require("dap").continue()
+      end,
+      "Continue",
+    },
+    ["<F10>"] = {
+      function()
+        require("dap").step_over()
+      end,
+      "Step over",
+    },
+    ["<F11>"] = {
+      function()
+        require("dap").step_into()
+      end,
+      "Step into",
+    },
+    ["<F12>"] = {
+      function()
+        require("dap").step_out()
+      end,
+      "Step out",
+    },
+    ["<leader>db"] = {
+      function()
+        require("dap").toggle_breakpoint()
+      end,
+      "Toggle breakpoint",
+    },
+    ["<leader>dB"] = {
+      function()
+        require("dap").set_breakpoint(vim.fn.input "Breakpoint condition: ")
+      end,
+      "Set breakpoint",
+    },
+    ["<leader>dl"] = {
+      function()
+        require("dap").set_breakpoint(nil, nil, vim.fn.input "Log point message: ")
+      end,
+      "Set log point",
+    },
+    ["<leader>dr"] = {
+      function()
+        require("dap").repl.open()
+      end,
+      "Open REPL",
+    },
+    ["<leader>dc"] = {
+      function()
+        require("dap").run_last()
+      end,
+      "Run last",
+    },
+  },
+}
+
+M.dapui = {
+  n = {
+    ["<leader>du"] = {
+      function()
+        require("dapui").toggle()
+      end,
+      "Toggle UI",
+    },
+  },
+}
 -- more keybinds!
 
 return M

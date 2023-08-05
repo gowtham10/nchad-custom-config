@@ -76,7 +76,8 @@ local plugins = {
 
   {
     "zbirenbaum/copilot-cmp",
-    event = { "InsertEnter", "LspAttach" },
+    -- event = { "InsertEnter", "LspAttach" },
+    event = "InsertEnter",
     cmd = "Copilot",
     config = function()
       require("copilot_cmp").setup()
@@ -123,23 +124,40 @@ local plugins = {
   --   end,
   -- },
 
-  -- {
-  --   "mfussenegger/nvim-dap",
-  --   config = function()
-  --     require "custom.configs.dap"
-  --   end,
-  -- },
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      "rcarriga/nvim-dap-ui",
+      "mxsdev/nvim-dap-vscode-js",
+      -- build debugger from source
+      {
+        "microsoft/vscode-js-debug",
+        version = "1.x",
+        build = "npm i && npm run compile vsDebugServerBundle && mv dist out",
+      },
+    },
+    config = function()
+      require "custom.configs.dap"
+    end,
+  },
 
   -- {
   --   "rcarriga/nvim-dap-ui",
   --   dependencies = {
   --     {
   --       "mfussenegger/nvim-dap",
-  --       -- config = function()
-  --       --   require "custom.configs.dap"
-  --       -- end,
   --     },
   --   },
+  --   config = function()
+  --     require "custom.configs.dapui"
+  --   end,
+  -- },
+
+  -- {
+  --   "mxsdev/nvim-dap-vscode-js",
+  --   config = function()
+  --     require "custom.configs.dap-vscode-js"
+  --   end,
   -- },
 
   -- To make a plugin not be loaded
