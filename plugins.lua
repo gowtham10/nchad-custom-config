@@ -141,24 +141,6 @@ local plugins = {
     end,
   },
 
-  -- {
-  --   "rcarriga/nvim-dap-ui",
-  --   dependencies = {
-  --     {
-  --       "mfussenegger/nvim-dap",
-  --     },
-  --   },
-  --   config = function()
-  --     require "custom.configs.dapui"
-  --   end,
-  -- },
-
-  -- {
-  --   "mxsdev/nvim-dap-vscode-js",
-  --   config = function()
-  --     require "custom.configs.dap-vscode-js"
-  --   end,
-  -- },
 
   -- To make a plugin not be loaded
   -- {
