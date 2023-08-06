@@ -129,18 +129,28 @@ local plugins = {
     dependencies = {
       "rcarriga/nvim-dap-ui",
       "mxsdev/nvim-dap-vscode-js",
+      "theHamsta/nvim-dap-virtual-text",
       -- build debugger from source
-      {
-        "microsoft/vscode-js-debug",
-        version = "1.x",
-        build = "npm i && npm run compile vsDebugServerBundle && mv dist out",
-      },
+      -- {
+      --   "microsoft/vscode-js-debug",
+      --   version = "1.x",
+      --   build = "npm i && npm run compile vsDebugServerBundle && mv dist out",
+      -- },
     },
     config = function()
       require "custom.configs.dap"
     end,
   },
 
+  -- {
+  --   "rcarriga/nvim-dap-ui",
+  --   dependencies = {
+  --     "mfussenegger/nvim-dap",
+  --   },
+  --   config = function()
+  --     require "custom.configs.dapui"
+  --   end,
+  -- },
 
   -- To make a plugin not be loaded
   -- {

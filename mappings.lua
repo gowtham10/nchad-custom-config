@@ -253,6 +253,12 @@ M.dapui = {
       end,
       "Toggle UI",
     },
+    ["<leader>de"] = {
+      function()
+        require("dapui").eval()
+      end,
+      "Evaluate expression",
+    }
   },
 }
 -- more keybinds!

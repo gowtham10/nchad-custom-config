@@ -4,6 +4,14 @@ if not present then
   return
 end
 
+local textPresent, virtualText = pcall(require, "nvim-dap-virtual-text")
+
+if not textPresent then
+  return
+end
+
+virtualText.setup()
+
 -- dapui
 local uipresent, dapui = pcall(require, "dapui")
 
@@ -23,8 +31,8 @@ dap.listeners.before.event_exited["dapui_config"] = function()
   dapui.close({})
 end
 
-vim.fn.sign_define('DapBreakpoint',{ text ='🟥', texthl ='', linehl ='', numhl =''})
-vim.fn.sign_define('DapStopped',{ text ='▶️', texthl ='', linehl ='', numhl =''})
+vim.fn.sign_define('DapBreakpoint',{ text ='🎈', texthl ='', linehl ='', numhl =''})
+vim.fn.sign_define('DapStopped',{ text ='👉', texthl ='', linehl ='', numhl =''})
 
 
 
@@ -76,7 +84,6 @@ for _, language in ipairs(js_based_languages) do
       name = "Launch file",
       program = "${file}",
       cwd = "${workspaceFolder}",
-      port = 9222,
     },
     {
       type = "pwa-node",
