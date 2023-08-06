@@ -6,6 +6,8 @@ M.general = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<A-j>"] = { "<cmd> m+ <CR> ==", "Move line down" },
     ["<A-k>"] = { "<cmd> m-2 <CR> ==", "Move line up" },
+    ["<C-c>"] = { ":noh <CR>", "Clear highlights" },
+    ["<C-a>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
   },
   i = {
     ["<A-j>"] = { "<Esc><cmd> m+ <CR>==gi", "Move line down" },
@@ -258,7 +260,7 @@ M.dapui = {
         require("dapui").eval()
       end,
       "Evaluate expression",
-    }
+    },
   },
 }
 -- more keybinds!

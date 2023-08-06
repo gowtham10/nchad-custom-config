@@ -31,7 +31,8 @@ dap.listeners.before.event_exited["dapui_config"] = function()
   dapui.close({})
 end
 
-vim.fn.sign_define('DapBreakpoint',{ text ='🎈', texthl ='', linehl ='', numhl =''})
+vim.fn.sign_define('DapBreakpoint',{ text ='🍄', texthl ='', linehl ='', numhl =''})
+-- vim.fn.sign_define('DapBreakpoint',{ text ='🎈', texthl ='', linehl ='', numhl =''})
 vim.fn.sign_define('DapStopped',{ text ='👉', texthl ='', linehl ='', numhl =''})
 
 
