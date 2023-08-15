@@ -126,6 +126,7 @@ local plugins = {
 
   {
     "mfussenegger/nvim-dap",
+    event = "InsertEnter",
     dependencies = {
       "rcarriga/nvim-dap-ui",
       "mxsdev/nvim-dap-vscode-js",
@@ -140,6 +141,37 @@ local plugins = {
     config = function()
       require "custom.configs.dap"
     end,
+  },
+
+  {
+    "nvim-orgmode/orgmode",
+    -- enabled = false,
+    lazy = false,
+    config = function()
+      require "custom.configs.orgmode"
+    end,
+  },
+
+  {
+    "vimwiki/vimwiki",
+    enabled = false,
+    event = "InsertEnter",
+  },
+
+  {
+
+    "rest-nvim/rest.nvim",
+    event = "InsertEnter",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require "custom.configs.rest"
+    end,
+  },
+
+  {
+    "mg979/vim-visual-multi",
+    enabled = false,
+    event = "InsertEnter",
   },
 
   -- {

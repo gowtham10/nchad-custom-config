@@ -4,10 +4,18 @@ local M = {}
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
+    -- Moving the line
     ["<A-j>"] = { "<cmd> m+ <CR> ==", "Move line down" },
     ["<A-k>"] = { "<cmd> m-2 <CR> ==", "Move line up" },
+
     ["<C-c>"] = { ":noh <CR>", "Clear highlights" },
     ["<C-a>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
+
+    ["<leader>bl"] = { "<cmd> b# <CR>", "Last buffer" },
+
+    -- find and replace under a cursor
+    ["<leader>fr"] = { ":%s###gc<Left><Left><Left><Left>", "Find and replace" },
+    ["<leader>fc"] = { ":%s#\\<<C-r><C-w>\\>##gc<Left><Left><Left>", "Find and replace word under cursor" },
   },
   i = {
     ["<A-j>"] = { "<Esc><cmd> m+ <CR>==gi", "Move line down" },
@@ -260,6 +268,40 @@ M.dapui = {
         require("dapui").eval()
       end,
       "Evaluate expression",
+    },
+  },
+}
+
+M.multiline = {
+  n = {
+    ["<leader>tm"] = {
+      "<Plug>(VM-Add-Cursor-Up)",
+      "Multiline select up",
+    },
+    -- ["<M-Down>"] = {
+    --   "<Plug>(VM-Add-Cursor-Down)",
+    --   "Multiline select down",
+    -- },
+    -- ["<leader>tm"] = {
+    --   "<Plug>(VM-Toggle-Multiline)",
+    --   "Toggle multiline",
+    -- },
+  },
+}
+
+M.rest = {
+  n = {
+    ["<leader>rr"] = {
+      "<Plug>RestNvim",
+      "Run request under cursor",
+    },
+    ["<leader>rp"] = {
+      "<Plug>RestNvimPreview",
+      "Preview request under cursor",
+    },
+    ["<leader>rl"] = {
+      "<Plug>RestNvimLast",
+      "Run last request",
     },
   },
 }

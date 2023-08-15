@@ -13,6 +13,14 @@ M.treesitter = {
     "c",
     "markdown",
     "markdown_inline",
+    "org",
+    "http",
+  },
+  highlight = {
+    enable = true,
+    use_languagetree = true,
+    disable = { "org" },
+    additional_vim_regex_highlighting = { "org" },
   },
   indent = {
     enable = true,
@@ -100,6 +108,7 @@ M.cmp = {
     { name = "buffer" },
     { name = "nvim_lua" },
     { name = "path" },
+    { name = "orgmode" },
   },
 }
 
