@@ -68,7 +68,7 @@ local plugins = {
   {
     "zbirenbaum/copilot.lua",
     event = "InsertEnter",
-    cmd = "Copilot",
+    -- cmd = "Copilot",
     config = function()
       require "custom.configs.copilot"
     end,
@@ -78,7 +78,7 @@ local plugins = {
     "zbirenbaum/copilot-cmp",
     -- event = { "InsertEnter", "LspAttach" },
     event = "InsertEnter",
-    cmd = "Copilot",
+    -- cmd = "Copilot",
     config = function()
       require("copilot_cmp").setup()
     end,
@@ -159,7 +159,6 @@ local plugins = {
   },
 
   {
-
     "rest-nvim/rest.nvim",
     event = "InsertEnter",
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -171,6 +170,12 @@ local plugins = {
   {
     "mg979/vim-visual-multi",
     enabled = false,
+    event = "InsertEnter",
+  },
+
+  {
+    "sindrets/diffview.nvim",
+    enabled = true,
     event = "InsertEnter",
   },
 

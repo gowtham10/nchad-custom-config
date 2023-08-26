@@ -305,6 +305,23 @@ M.rest = {
     },
   },
 }
+
+M.diffview = {
+  n = {
+    ["<leader>dvo"] = {
+      function()
+        require("diffview").open()
+      end,
+      "Open diffview",
+    },
+    ["<leader>dvc"] = {
+      function()
+        require("diffview").close()
+      end,
+      "Close diffview",
+    },
+  },
+}
 -- more keybinds!
 
 return M
