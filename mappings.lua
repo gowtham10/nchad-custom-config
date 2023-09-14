@@ -320,6 +320,12 @@ M.diffview = {
       end,
       "Close diffview",
     },
+    ["<leader>dhf"] = {
+      function()
+        require("diffview").file_history(null, vim.fn.expand "%:p")
+      end,
+      "Current file history diffview",
+    }
   },
 }
 -- more keybinds!
